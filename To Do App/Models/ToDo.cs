@@ -13,7 +13,7 @@ namespace TodoApp.Models
 
 
 
-        public List<ToDo> GetTodoList()
+
         public List<ToDo> getTodoList()
         {
             List<ToDo> todos = new List<ToDo>();
@@ -34,7 +34,7 @@ namespace TodoApp.Models
             List<ToDo> isNotCompletedList = new List<ToDo>();
             foreach (ToDo todo in new ToDo().getTodoList())
             {
-                if (ToDo.IsCompleted == false)
+                if (todo.IsCompleted == false)
                 {
                     isNotCompletedList.Add(todo);
                 }

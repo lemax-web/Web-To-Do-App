@@ -1,11 +1,20 @@
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.EntityFrameworkCore;
+using TodoApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// I chose to add services to the container here.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext <TodoDbContext>(Options =>
+{
+    Options.UseSqlite($"Data Source=mydb.db;");
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuration o the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Reflection.Emit;
 using TodoApp.Models;
 
-namespace To_Do_App.Data
+namespace TodoApp.Data
 {
     public class TodoDbContext : DbContext
     {
